@@ -12,6 +12,8 @@ class ComponentTestController extends Controller
     }
 
     public function showComponent2() {
-        return view('tests.component-test2'); // フォルダ名.ファイル名
+        // $classBaseMessage = "メッセージ";
+        // return view('tests.component-test2', compact('classBaseMessage'));
+        return view('tests.component-test2');
     }
 }
