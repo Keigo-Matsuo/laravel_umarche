@@ -1,8 +1,8 @@
 @props(['status' => 'info'])
 
 @php
-if($status === 'info'){ $textColor = 'text-blue-500';}
-if($status === 'error'){ $textColor = 'text-red-500';}
+if(session('status') === 'info'){ $textColor = 'text-blue-500';}
+if(session('status') === 'alert'){ $textColor = 'text-red-500';}
 @endphp
 
 @if(session('message'))
