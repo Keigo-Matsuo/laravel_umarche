@@ -10,7 +10,7 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                     <section class="text-gray-600 body-font">
-                        <div class="container px-5 mx-auto">
+                        <div class="container md:px-5 mx-auto">
 
                             {{-- フラッシュメッセージ --}}
                             <x-flash-message status="session('status')" />
@@ -19,22 +19,22 @@
                                 <table class="table-auto w-full text-left whitespace-no-wrap">
                                     <thead>
                                         <tr>
-                                            <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100 rounded-tl rounded-bl">名前</th>
-                                            <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">メール</th>
-                                            <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">期限が切れた日</th>
-                                            <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100 rounded-tr rounded-br"></th>
+                                            <th class="md:px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100 rounded-tl rounded-bl">名前</th>
+                                            <th class="md:px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">メール</th>
+                                            <th class="md:px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">期限が切れた日</th>
+                                            <th class="md:px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100 rounded-tr rounded-br"></th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @foreach ($expiredOwners as $owner)
                                             <tr>
-                                                <td class="px-4 py-3">{{ $owner->name }}</td>
-                                                <td class="px-4 py-3">{{ $owner->email }}</td>
-                                                <td class="px-4 py-3">{{ $owner->deleted_at->diffForHumans() }}</td>
+                                                <td class="md:px-4 py-3">{{ $owner->name }}</td>
+                                                <td class="md:px-4 py-3">{{ $owner->email }}</td>
+                                                <td class="md:px-4 py-3">{{ $owner->deleted_at->diffForHumans() }}</td>
                                                 <form id="delete_{{ $owner->id }}" action="{{ route('admin.expired-owners.destroy', ['owner' => $owner->id]) }}" method="post">
                                                     @csrf
-                                                    <td class="px-4 py-3 text-center">
-                                                        <a href="#" type="button" data-id="{{ $owner->id }}" onclick="deletePost(this)" class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">完全に削除</a>
+                                                    <td class="md:px-4 py-3 text-center">
+                                                        <a href="#" type="button" data-id="{{ $owner->id }}" onclick="deletePost(this)" class="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">完全に削除</a>
                                                     </td>
                                                 </form>
                                             </tr>
