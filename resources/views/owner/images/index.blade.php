@@ -5,6 +5,11 @@
         </h2>
     </x-slot>
 
+    {{--
+    <img src="{{ asset('storage/products/611102071_66685d9daa36b.png') }}" >
+    <img src="{{ asset('storage/shops/1015669527_666833e550776.jpg') }}" >
+    --}}
+
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
