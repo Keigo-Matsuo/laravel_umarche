@@ -12,6 +12,9 @@
                 
                     <x-auth-validation-errors class="mb-4" :errors="$errors" />
                     
+                    {{-- フラッシュメッセージ --}}
+                    <x-flash-message status="session('status')" />
+                    
                     <form action="{{ route('owner.shops.update', ['shop' => $shop->id]) }}" method="post" enctype="multipart/form-data">
                         @csrf
 
