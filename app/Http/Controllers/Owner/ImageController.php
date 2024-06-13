@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Owner;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Image;
+use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\UploadImageRequest;
 use App\Services\ImageService;
@@ -129,6 +130,33 @@ class ImageController extends Controller
         // 画像削除の前にStorageフォルダ内の画像を削除
         $image =  Image::findOrFail($id);
         $filePath = 'public/products/' . $image->filename;
+
+        $imageInProducts = Product::where('image1', $image->id)
+        ->orWhere('image2', $image->id)
+        ->orWhere('image3', $image->id)
+        ->orWhere('image4', $image->id)
+        ->get();
+
+        if ($imageInProducts) {
+            $imageInProducts->each(function ($product) use($image) {
+                if ($product->image1 === $image->id) {
+                    $product->image1 = null;
+                    $product->save();
+                }
+                if ($product->image2 === $image->id) {
+                    $product->image2 = null;
+                    $product->save();
+                }
+                if ($product->image3 === $image->id) {
+                    $product->image3 = null;
+                    $product->save();
+                }
+                if ($product->image4 === $image->id) {
+                    $product->image4 = null;
+                    $product->save();
+                }
+            });
+        }
 
         if (Storage::exists($filePath)) {
             Storage::delete($filePath);
