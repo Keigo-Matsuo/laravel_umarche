@@ -144,6 +144,10 @@
   .micromodal-slide .modal__overlay {
     will-change: transform;
   }
+.swiper {
+    /* width: 600px; */
+    height: 300px;
+  }
 /*
 ! tailwindcss v3.4.4 | MIT License | https://tailwindcss.com
 */
@@ -835,6 +839,9 @@ select{
 .-mt-px{
   margin-top: -1px;
 }
+.mb-1{
+  margin-bottom: 0.25rem;
+}
 .mb-12{
   margin-bottom: 3rem;
 }
@@ -859,8 +866,14 @@ select{
 .ml-4{
   margin-left: 1rem;
 }
+.ml-auto{
+  margin-left: auto;
+}
 .mr-2{
   margin-right: 0.5rem;
+}
+.mr-3{
+  margin-right: 0.75rem;
 }
 .mt-1{
   margin-top: 0.25rem;
@@ -879,15 +892,6 @@ select{
 }
 .mt-8{
   margin-top: 2rem;
-}
-.mb-1{
-  margin-bottom: 0.25rem;
-}
-.ml-auto{
-  margin-left: auto;
-}
-.mr-3{
-  margin-right: 0.75rem;
 }
 .block{
   display: block;
@@ -1287,6 +1291,9 @@ select{
 .pl-3{
   padding-left: 0.75rem;
 }
+.pr-10{
+  padding-right: 2.5rem;
+}
 .pr-4{
   padding-right: 1rem;
 }
@@ -1304,9 +1311,6 @@ select{
 }
 .pt-8{
   padding-top: 2rem;
-}
-.pr-10{
-  padding-right: 2.5rem;
 }
 .text-left{
   text-align: left;
@@ -1382,11 +1386,11 @@ select{
 .leading-normal{
   line-height: 1.5;
 }
-.leading-tight{
-  line-height: 1.25;
-}
 .leading-relaxed{
   line-height: 1.625;
+}
+.leading-tight{
+  line-height: 1.25;
 }
 .tracking-wide{
   letter-spacing: 0.025em;
