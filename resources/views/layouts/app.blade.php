@@ -21,13 +21,13 @@
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
-            @if (auth('admin')->user())
-                @include('layouts.admin-navigation')
-            @elseif (auth('owners')->user())
-                @include('layouts.owner-navigation')
-            @else (auth('users')->user())
-                @include('layouts.user-navigation')
-            @endif
+        @if (request()->is('admin*'))
+            @include('layouts.admin-navigation')
+        @elseif (request()->is('owner*'))
+            @include('layouts.owner-navigation')
+        @else
+            @include('layouts.user-navigation')
+        @endif
 
             <!-- Page Heading -->
             <header class="bg-white shadow">
