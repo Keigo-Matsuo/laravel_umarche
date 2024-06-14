@@ -203,7 +203,7 @@ class ProductController extends Controller
                         'product_id' => $product->id,
                         'type' => $request->type,
                         'quantity' => $newQuantity,
-                    ]);         
+                    ]);
                 }, 2);
             } catch (Throwable $e) {
                 Log::error($e);
