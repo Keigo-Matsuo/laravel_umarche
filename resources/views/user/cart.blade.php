@@ -20,8 +20,8 @@
                                     @endif
                                 </div>
                                 <div class="md:w-4/12 md:ml-2">{{ $product->name }}</div>
-                                <div class="md:w-3/12 flex justify-arountd">
-                                    <div>{{ $product->pivot->quantity }}</div>
+                                <div class="md:w-3/12 flex justify-around">
+                                    <div>{{ $product->pivot->quantity }}<span class="text-sm text-gray-700">個</span></div>
                                     <div>{{ number_format($product->pivot->quantity * $product->price) }}<span class="text-sm text-gray-700">円（税込み）</span></div>
                                 </div>
                                 <div class="md:w-2/12">
